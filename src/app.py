@@ -4,12 +4,17 @@ import pickle
 import pandas as pd
 import flasgger
 from flasgger import Swagger
+import os
 
 app=Flask(__name__)
 Swagger(app)
 
-mle = pickle.load(open('mle_deployment_senti_model.pkl','rb'))
-tfidf_vect = pickle.load(open('tfidf_imdb.pkl','rb'))
+model_path=os.path.abspath("models/deploy")
+mle_file=model_path+'/mle_deployment_senti_model.pkl'
+tfidf_file=model_path+'/tfidf_imdb.pkl'
+
+mle = pickle.load(open(mle_file,'rb'))
+tfidf_vect = pickle.load(open(tfidf_file,'rb'))
 
 @app.route('/')
 def home():
