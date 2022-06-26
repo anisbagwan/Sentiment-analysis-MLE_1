@@ -1,0 +1,6 @@
+
+app.py
+mle_deployment_senti_model.pkl
+Templates/home.html
+Templates/predict.html
+tfidf_imdb.pkl
