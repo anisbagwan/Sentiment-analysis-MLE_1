@@ -1,11 +1,11 @@
 #1.Set base image 
-FROM python
+FROM python:3.9.12
 
 #2.Set working directory
 WORKDIR /opt/app
 
 #3.Provide port number
-EXPOSE 500
+EXPOSE 5000
 
 #4.Copy files to the working directory
 COPY . . 
